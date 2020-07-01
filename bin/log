@@ -20,4 +20,4 @@ export SME_STATUS=${?}
 export SME_COMMAND=${@}
 
 # EXECUTE SLACK ME
-source ${SME_BIN}/SlackMe.sh
+source ${SME_BIN}/slackMe.sh
