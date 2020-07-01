@@ -1,4 +1,0 @@
-can't find package Expect
-    while executing
-"package require Expect"
-    (file "/usr/local/bin/unbuffer" line 6)
