@@ -11,10 +11,16 @@ else
 fi
 
 
-### ADD EXTRA INFORMATION LIKE SCREEN SESSION AND LOCATION OF LOG FILE
+### ADD EXTRA INFORMATION LIKE SCREEN SESSION, OR TMUX SESSION AND LOCATION OF LOG FILE
 SME_ADDINFO=""
 if [[ ! -z "$STY" ]]; then
 	SME_ADDINFO="${SME_ADDINFO}\n|_ Screen session: _${STY}_"
+fi
+
+if [[ ! -z "$TMUX" ]]; then
+  echo "we in tmux"
+  SME_TMUXSESSION=$(tmux display-message -p "#S")
+  SME_ADDINFO="${SME_ADDINFO}\n|_ Tmux session: _${SME_TMUXSESSION}_"
 fi
 
 if [[ ! -z "${SME_THISSESSIONLOG}" ]] && [ -f ${SME_THISSESSIONLOG} ]; then
