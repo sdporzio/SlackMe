@@ -1,0 +1,23 @@
+# Usage: log "command"
+
+# This scripts executes the command "command" (collected by ${@}), saves all output to a log file, saves the status and then send all information over via slack web-hook
+
+
+# LOG FILE WHERE ALL ACTIVITY IS RECORDED
+export SME_THISSESSIONLOG=${SME_LOG}/"$( date +%s )"_${PPID}.log
+
+# SAVE START TIME OF ACTIVITY
+export SME_THISSESSIONSTARTTIME="$( date +%s )"
+
+# START THE SCRIPT!
+unbuffer $@ 2>&1 | tee ${SME_THISSESSIONLOG}
+
+# SAVE END TIME OF ACTIVITY
+export SME_THISSESSIONENDTIME="$( date +%s )"
+
+# REMEMBER WHAT IS THE END STATUS AND WHAT COMMAND WAS ISSUED
+export SME_STATUS=${?}
+export SME_COMMAND=${@}
+
+# EXECUTE SLACK ME
+source ${SME_BIN}/SlackMe.sh

@@ -1,0 +1,8 @@
+# Usage: "command"; sme
+
+# Use this if you're not interested in the full log of the activity. This script will collect the last executed command (if run right after "command", will return "command") and send a notification to slack when "command" will be over.
+
+# EMPTY COMMAND. IT INDICATES TO SLACKME TO RETRIEVE THE LAST ONE
+export SME_COMMAND=""
+# EXECUTE SLACK ME
+source ${SME_BIN}/SlackMe.sh
