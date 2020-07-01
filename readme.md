@@ -16,7 +16,7 @@ to execute an arbitrary command and be notified at the end of it.
 
 # Installation
 
-In order to install it, head over to `conf/slackMe.conf` and replace the env variables there with your channel name, username, and slack webhook.
+In order to install it, create a `conf/slackMe.conf` file, using `conf/slackMe.conf` as an example and replacing the env variables there with your channel name, username, and slack webhook.
 
 `source setup.sh`, you will have to do that each time you start a new session, or you can head over to your `.bash_profile` and append at the end of it:
 ```

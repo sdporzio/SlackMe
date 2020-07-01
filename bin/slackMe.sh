@@ -18,7 +18,6 @@ if [[ ! -z "$STY" ]]; then
 fi
 
 if [[ ! -z "$TMUX" ]]; then
-  echo "we in tmux"
   SME_TMUXSESSION=$(tmux display-message -p "#S")
   SME_ADDINFO="${SME_ADDINFO}\n|_ Tmux session: _${SME_TMUXSESSION}_"
 fi
