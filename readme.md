@@ -1,11 +1,15 @@
 # Usage
 
-`log ./myscript.sh`
+```
+log ./myscript.sh
+```
 in order to save the full log of a script
 
 or
 
-`somecommand; sme`
+```
+somecommand; sme
+```
 to execute an arbitrary command and be notified at the end of it.
 
 ---
@@ -20,5 +24,7 @@ source PATHTOYOURSLACKMEDIR/setup.sh
 ```
 
 After that you can head to `test/` and run:
-`log ./testMe.sh`
+```
+log ./testMe.sh
+```
 to make sure everything's running properly.
